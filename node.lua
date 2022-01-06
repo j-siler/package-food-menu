@@ -39,7 +39,7 @@ end)
 
 function node.render()
     background.draw(0, 0, WIDTH, HEIGHT, .8)
-    font:write(0, 0, "Testing", font_size*1.2, 255, 255, 0, 1.0)
+    font:write(0, 0, string.format("W=%2 H=%d", WIDTH, HEIGHT), font_size*1.2, 255, 255, 0, 1.0)
     local y = 50
     for idx, item in ipairs(items) do
         if item.text == "" then
