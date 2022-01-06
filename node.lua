@@ -38,7 +38,7 @@ util.json_watch("config.json", function(config)
 end)
 
 function node.render()
-    font:write(0, 0, "Testing", font_size*1.2, 255, 255, 0)
+    font:write(0, 0, "Testing", font_size*1.2, 255, 255, 0, 1.0)
     background.draw(0, 0, WIDTH, HEIGHT, .8)
     local y = 50
     for idx, item in ipairs(items) do
