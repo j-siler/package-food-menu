@@ -2,6 +2,7 @@ gl.setup(1920, 1080)
 
 local menu, font, font_size, color
 local dots = resource.load_image "dots.png"
+local separator = resource.load_image "separator.png"
 local range_x1, range_x2
 
 local function Resource()
@@ -37,11 +38,17 @@ util.json_watch("config.json", function(config)
 end)
 
 function node.render()
-    background.draw(0, 0, WIDTH, HEIGHT)
+    background.draw(0, 0, WIDTH, HEIGHT, .8)
     local y = 50
     for idx, item in ipairs(items) do
         if item.text == "" then
-            y = y + font_size*0.5
+            local len = range_x2-range_x1                                                    
+            local center = len/2                                                             
+            local lpos = center-(len/4)                                                      
+            local rpos = center+(len/4)                                                      
+            y = y + font_size*0.5                                                            
+            separator:draw(lpos, y, rpos,  y+10, .5)                                         
+            y = y + font_size*0.5                                                            
         elseif item.price == "" then
             font:write(range_x1, y, item.text, font_size*1.2, color.r, color.g, color.b)
             y = y + font_size*1.3
