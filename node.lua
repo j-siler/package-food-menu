@@ -2,7 +2,7 @@ gl.setup(1920, 1080)
 
 local menu, font, font_size, color
 local dots = resource.load_image "dots.png"
-local separator = resource.load_image "separator.png"
+local separator = resource.load_image "rainbowchalkline.png"
 local range_x1, range_x2
 
 local function Resource()
