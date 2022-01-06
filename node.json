@@ -1,0 +1,76 @@
+{
+    "name": "Menu",
+    "options": [{
+        "title": "Configuration",
+        "type": "section"
+    }, {
+        "title": "Background image",
+        "ui_width": 6,
+        "name": "background",
+        "type": "resource",
+        "valid": ["image"],
+        "default": "dessert.jpg"
+    }, {
+        "title": "Text Area Space",
+        "ui_width": 6,
+        "name": "text_range",
+        "type": "select",
+        "options": [
+            [[50,  900], "50px -  900px (Left Half)"],
+            [[50, 1300], "50px - 1300px (Left 3/4)"],
+            [[1000, 1870], "1000px - 1870px (Right Half)"],
+            [[400, 1520], "400px - 1520px (Center)"]
+        ],
+        "default": [1000, 1870]
+    },
+    
+    {
+        "title": "Font",
+        "ui_width": 6,
+        "name": "font",
+        "type": "font",
+        "default": "linden-hill.otf"
+    }, {
+        "title": "Font Size",
+        "ui_width": 4,
+        "name": "font_size",
+        "type": "select",
+        "options": [
+            [50, "50px"],
+            [80, "80px"],
+            [100, "100px"]
+        ],
+        "default": 50
+    }, {
+        "title": "Text Color",
+        "ui_width": 2,
+        "name": "text_color",
+        "type": "color",
+        "default": [1,1,1,1]
+    },
+
+    {
+        "title": "Menu",
+        "type": "section"
+    }, {
+        "title": "Items",
+        "name": "items",
+        "type": "list",
+        "itemname": "Item",
+        "items": [{
+            "title": "Text",
+            "ui_width": 8,
+            "name": "text",
+            "type": "string",
+            "placeholder": "Leave empty for separator",
+            "default": "Pizza"
+        }, {
+            "title": "Price",
+            "ui_width": 4,
+            "name": "price",
+            "type": "string",
+            "placeholder": "Leave empty for title",
+            "default": "2€"
+        }]
+    }]
+}

@@ -1,0 +1,10 @@
+{
+    "name": "Food menu",
+    "author": "Florian Wesch <fw@info-beamer.com>",
+    "desc": "Display a food menu",
+    "platforms": ["pi/v6", "pi/v7", "pi/v8"],
+    "nesting": {
+        "parents": ["top-level"],
+        "childs": []
+    }
+}
