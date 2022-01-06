@@ -38,18 +38,18 @@ util.json_watch("config.json", function(config)
 end)
 
 function node.render()
-    font:write(0, 0, "Testing", font_size*1.2, 255, 255, 0, 1.0)
     background.draw(0, 0, WIDTH, HEIGHT, .8)
+    font:write(0, 0, "Testing", font_size*1.2, 255, 255, 0, 1.0)
     local y = 50
     for idx, item in ipairs(items) do
         if item.text == "" then
-            local len = range_x2-range_x1                                                    
-            local center = len/2                                                             
-            local lpos = center-(len/4)                                                      
-            local rpos = center+(len/4)                                                      
-            y = y + font_size*0.5                                                            
-            separator:draw(lpos, y, rpos,  y+10, .5)                                         
-            y = y + font_size*0.5                                                            
+            local len = range_x2-range_x1
+            local center = len/2
+            local lpos = center-(len/4)
+            local rpos = center+(len/4)
+            y = y + font_size*0.5
+            separator:draw(lpos, y, rpos,  y+10, .5)
+            y = y + font_size*0.5
         elseif item.price == "" then
             font:write(range_x1, y, item.text, font_size*1.2, color.r, color.g, color.b)
             y = y + font_size*1.3
