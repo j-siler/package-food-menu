@@ -58,7 +58,7 @@ function node.render()
         sys.displays[2].y2)                                                           
       font:write(0, 20, statusline2, font_size*1.0, 0, 255, 255, 1.0)
     else
-      font:write(0, 20, "No secondary monitor, font_size*1.0, 0, 255, 255, 1.0)
+      font:write(0, 20, "No secondary monitor", font_size*1.0, 0, 255, 255, 1.0)
     end
 
     local y = 50
