@@ -49,13 +49,17 @@ function node.render()
       sys.displays[1].y2)                                                           
     font:write(0, 0, statusline, font_size*1.0, 0, 255, 255, 1.0)                   
 
-    local statusformat2  = "        d[1].x1=%d, d[1].x2=%d, d[1].y1=%d, d[1].y2=%d"  
-    local statusline2 = string.format(statusformat2,                                  
-      sys.displays[2].x1,                                                           
-      sys.displays[2].x2,                                                           
-      sys.displays[2].y1,                                                           
-      sys.displays[2].y2)                                                           
-    font:write(0, 20, statusline2, font_size*1.0, 0, 255, 255, 1.0)                   
+    if d[2] != nil 
+      local statusformat2  = "        d[1].x1=%d, d[1].x2=%d, d[1].y1=%d, d[1].y2=%d"  
+      local statusline2 = string.format(statusformat2,                                  
+        sys.displays[2].x1,                                                           
+        sys.displays[2].x2,                                                           
+        sys.displays[2].y1,                                                           
+        sys.displays[2].y2)                                                           
+      font:write(0, 20, statusline2, font_size*1.0, 0, 255, 255, 1.0)
+    else
+      font:write(0, 20, "No secondary monitor, font_size*1.0, 0, 255, 255, 1.0)
+    end
 
     local y = 50
     for idx, item in ipairs(items) do
