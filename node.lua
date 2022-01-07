@@ -41,7 +41,7 @@ function node.render()
     -- background.draw(0, 0, WIDTH, HEIGHT, .8)
     background.draw(
         sys.displays[2].x1, sys.displays[2].y1,
-        sys.displays[2].x2, sys.displays[2].y2,
+        sys.displays[2].x2, sys.displays[2].y2
     )
     local statusline = string.format("W=%d H=%d", WIDTH, HEIGHT)
     font:write(0, 0, statusline, font_size*1.2, 255, 255, 0, 1.0)
