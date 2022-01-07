@@ -55,7 +55,7 @@ function node.render()
       sys.displays[2].x2,                                                           
       sys.displays[2].y1,                                                           
       sys.displays[2].y2)                                                           
-    font:write(0, 20, statusline, fontsize*1.0, 0, 255, 255, 1.0)
+    --font:write(0, 20, statusline, fontsize*1.0, 0, 255, 255, 1.0)
     local y = 50
     for idx, item in ipairs(items) do
         if item.text == "" then
