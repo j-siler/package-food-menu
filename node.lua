@@ -38,7 +38,7 @@ util.json_watch("config.json", function(config)
 end)
 
 function node.render()
-    background.draw(0, 0, WIDTH, HEIGHT, .5)
+    background.draw(0, 0, WIDTH, HEIGHT, 1.0)
     local statusformat  = "H=%d W=%d d[1].x1=%d, d[1].x2=%d, d[1].y1=%d, d[1].y2=%d"  
     local statusline = string.format(statusformat,                                  
       HEIGHT,                                                                       
