@@ -62,6 +62,7 @@ local statusline = string.format(
     --     sys.displays[2].y2)
     --   statusline = statusline + statusline2
     -- end
+    statusline = statusline + "!!!"
     font:write(0, 0, statusline, font_size*1.0, 0, 255, 255, 1.0)
 
     local y = 50
