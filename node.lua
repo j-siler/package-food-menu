@@ -39,7 +39,7 @@ end)
 
 function node.render()
     background.draw(0, 0, WIDTH, HEIGHT, .8)
-    local statusline = string.format("W=%d H=%d", 1, 2)
+    local statusline = string.format("W=%d H=%d", WIDTH, HEIGHT)
     font:write(0, 0, statusline, font_size*1.2, 255, 255, 0, 1.0)
     -- font:write(0, 0, statusline, font_size*1.2, 255, 255, 0, 1.0)
     local y = 50
