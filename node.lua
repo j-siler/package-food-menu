@@ -39,24 +39,23 @@ end)
 
 function node.render()
     background.draw(0, 0, WIDTH, HEIGHT, .8)
-    local statusFormat="W=%d H=%d"
-    --local statusFormat="W=%d H=%d d[1]={x1=%d, x2=%d y1=%d y2=%d} d[2]={x1=%d, x2=%d y1=%d y2=%d}"
-    local statusline = string.format(
-      statusformat,
-      WIDTH, HEIGHT
-      -- HEIGHT,
-      --sys.displays[1].x1,
-      --sys.displays[1].x2,
-      --sys.displays[1].y1,
-      --sys.displays[1].y2,
-      --sys.displays[2].x1,
-      --sys.displays[2].x2,
-      --sys.displays[2].y1,
-      --sys.displays[2].y2
-      --1, 2, 3, 4, 5, 6, 7, 8
-      )
-    font:write(0, 0, statusline, font_size*1.2, 255, 255, 0, 1.0)
-    -- font:write(0, 0, statusline, font_size*1.2, 255, 255, 0, 1.0)
+    local statusformat  = "H=%d W=%d d[1].x1=%d, d[1].x2=%d, d[1].y1=%d, d[1].y2=%d"  
+    local statusformat2 = "          d[2].x1=%d, d[2].x2=%d, d[2].y1=%d, d[2].y2=%d"  
+                                                                                    
+    local statusline = string.format(statusformat,                                  
+      HEIGHT,                                                                       
+      WIDTH,                                                                        
+      sys.displays[1].x1,                                                           
+      sys.displays[1].x2,                                                           
+      sys.displays[1].y1,                                                           
+      sys.displays[1].y2)                                                           
+    font:write(0, 0, statusline, font_size*1.0, 0, 255, 255, 1.0)                   
+    local statusline = string.format(statusformat2,                                 
+      sys.displays[2].x1,                                                           
+      sys.displays[2].x2,                                                           
+      sys.displays[2].y1,                                                           
+      sys.displays[2].y2)                                                           
+    font:write(0, 2Connection to 192.168.3.107 closed by remote host.                                                                
     local y = 50
     for idx, item in ipairs(items) do
         if item.text == "" then
