@@ -55,7 +55,6 @@ function node.render()
 
    if sys.displays[2] == nil then
       statusline = statusline .. "No secondary screen."
-   end
    else
       local statusformat2  = "Screen 2 d[1].x1=%d, d[1].x2=%d, d[1].y1=%d, d[1].y2=%d."
       local statusline2 = string.format(statusformat2,
