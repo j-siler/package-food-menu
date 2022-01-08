@@ -39,7 +39,9 @@ end)
 
 function node.render()
     background.draw(0, 0, WIDTH, HEIGHT, 1.0)
-    local statusformat  = "H=%d W=%d %d screens.  Screen 1 x1=%d x2=%d y1=%d y2=%d.  "
+    local statusformat  = "H=%d W=%d %d screen.  Screen 1 x1=%d x2=%d y1=%d y2=%d.  "
+    if #sys.displays > 1 then
+          statusformat  = "H=%d W=%d %d screens.  Screen 1 x1=%d x2=%d y1=%d y2=%d.  "
 
 local statusline = string.format(
       statusformat,
