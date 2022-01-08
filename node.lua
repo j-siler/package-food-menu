@@ -70,35 +70,36 @@ function node.render()
       elseif sys.display[1].y1==0 and sys.display[2].y1==0 and sys.display[1].x2 == sys.display[2].x1 then
 	 statusline = statusline .. "  SideBySide (L->R)"
       end
-      font:write(0, 0, statusline, font_size*1.0, 0, 255, 255, 1.0)
+   end
+   font:write(0, 0, statusline, font_size*1.0, 0, 255, 255, 1.0)
 
-      local y = 50
-      for idx, item in ipairs(items) do
-	 if item.text == "" then
-	    local len = range_x2-range_x1
-	    local center = len/2
-	    local lpos = center-(len/4)
-	    local rpos = center+(len/4)
-	    y = y + font_size*0.5
-	    separator:draw(lpos, y, rpos,  y+10, .5)
-	    y = y + font_size*0.5
-	 elseif item.price == "" then
-	    font:write(range_x1, y, item.text, font_size*1.2, color.r, color.g, color.b)
-	    y = y + font_size*1.3
-	 else
-	    local w = font:width(item.text, font_size)
-	    font:write(range_x1, y, item.text, font_size, color.r, color.g, color.b, 0.8)
-	    local x_start = range_x1+w+10
+   local y = 50
+   for idx, item in ipairs(items) do
+      if item.text == "" then
+	 local len = range_x2-range_x1
+	 local center = len/2
+	 local lpos = center-(len/4)
+	 local rpos = center+(len/4)
+	 y = y + font_size*0.5
+	 separator:draw(lpos, y, rpos,  y+10, .5)
+	 y = y + font_size*0.5
+      elseif item.price == "" then
+	 font:write(range_x1, y, item.text, font_size*1.2, color.r, color.g, color.b)
+	 y = y + font_size*1.3
+      else
+	 local w = font:width(item.text, font_size)
+	 font:write(range_x1, y, item.text, font_size, color.r, color.g, color.b, 0.8)
+	 local x_start = range_x1+w+10
 
-	    local w = font:width(item.price, font_size)
-	    font:write(range_x2-w, y, item.price, font_size, color.r, color.g, color.b, 0.8)
+	 local w = font:width(item.price, font_size)
+	 font:write(range_x2-w, y, item.price, font_size, color.r, color.g, color.b, 0.8)
 
-	    local x_end = range_x2-w-10
+	 local x_end = range_x2-w-10
 
-	    local w = x_end - x_start
-	    w = w - (w % 20)
-	    dots:draw(x_start, y+font_size-25, x_end, y+font_size-10, 0.8, 0, 0, 1/1920*w, 1)
-	    y = y + font_size*1.05
-	 end
+	 local w = x_end - x_start
+	 w = w - (w % 20)
+	 dots:draw(x_start, y+font_size-25, x_end, y+font_size-10, 0.8, 0, 0, 1/1920*w, 1)
+	 y = y + font_size*1.05
       end
    end
+end
