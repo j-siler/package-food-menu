@@ -63,18 +63,18 @@ function node.render()
 					sys.displays[2].y1,
 					sys.displays[2].y2)
       statusline = statusline .. statusline2
-      if sys.displays[1].x1 == 0 --sys.display[2].x1
-      -- 	 and
-      -- 	 sys.display[1].x2 == sys.display[2].x2
-      -- 	 and
-      -- 	 sys.display[1].y1 == sys.display[2].y1
-      -- 	 and
-      -- 	 sys.display[1].y2 == sys.display[2].y2
+      if sys.displays[1].x1 == sys.display[2].x1
+	 and
+	 sys.displays[1].x2 == sys.displays[2].x2
+	 and
+	 sys.displays[1].y1 == sys.displays[2].y1
+	 and
+	 sys.displays[1].y2 == sys.displays[2].y2
       then
 	 statusline = statusline .. "  Mirrored."
-      -- elseif sys.display[1].x1==0 and sys.display[2].x1==0 and sys.display[1].y2 == sys.display[2].y1 then
+      -- elseif sys.displays[1].x1==0 and sys.displays[2].x1==0 and sys.displays[1].y2 == sys.displays[2].y1 then
       -- 	 statusline = statusline .. "  Stacked (T->B)"
-      -- elseif sys.display[1].y1==0 and sys.display[2].y1==0 and sys.display[1].x2 == sys.display[2].x1 then
+      -- elseif sys.displays[1].y1==0 and sys.displays[2].y1==0 and sys.displays[1].x2 == sys.displays[2].x1 then
       -- 	 statusline = statusline .. "  SideBySide (L->R)"
       end
    end
