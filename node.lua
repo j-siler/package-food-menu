@@ -63,7 +63,7 @@ function node.render()
 					sys.displays[2].y1,
 					sys.displays[2].y2)
       statusline = statusline .. statusline2
-      if sys.displays[1].x1 == sys.display[2].x1
+      if sys.displays[1].x1 == sys.displays[2].x1
 	 and
 	 sys.displays[1].x2 == sys.displays[2].x2
 	 and
