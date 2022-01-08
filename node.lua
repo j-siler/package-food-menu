@@ -51,18 +51,17 @@ local statusline = string.format(
       sys.displays[1].y1,
       sys.displays[1].y2)
 
-    -- if sys.displays[2] == nil then
-    --   statusline = statusline + "No secondary screen"
-    -- else
-    --   local statusformat2  = "Screen 2 d[1].x1=%d, d[1].x2=%d, d[1].y1=%d, d[1].y2=%d"
-    --   local statusline2 = string.format(statusformat2,
-    --     sys.displays[2].x1,
-    --     sys.displays[2].x2,
-    --     sys.displays[2].y1,
-    --     sys.displays[2].y2)
-    --   statusline = statusline + statusline2
-    -- end
-    statusline = statusline .. "!!!"
+     if sys.displays[2] == nil then
+       statusline = statusline .. "No secondary screen"
+    else
+      local statusformat2  = "Screen 2 d[1].x1=%d, d[1].x2=%d, d[1].y1=%d, d[1].y2=%d"
+      local statusline2 = string.format(statusformat2,
+        sys.displays[2].x1,
+        sys.displays[2].x2,
+        sys.displays[2].y1,
+        sys.displays[2].y2)
+      statusline = statusline + statusline2
+    end
     font:write(0, 0, statusline, font_size*1.0, 0, 255, 255, 1.0)
 
     local y = 50
