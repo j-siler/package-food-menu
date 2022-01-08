@@ -53,21 +53,22 @@ local statusline = string.format(
 
      if sys.displays[2] == nil then
        statusline = statusline .. "No secondary screen."
-    else
-      local statusformat2  = "Screen 2 d[1].x1=%d, d[1].x2=%d, d[1].y1=%d, d[1].y2=%d."
-      local statusline2 = string.format(statusformat2,
-        sys.displays[2].x1,
-        sys.displays[2].x2,
-        sys.displays[2].y1,
-        sys.displays[2].y2)
-      statusline = statusline .. statusline2
-      if sys.display[1] == sys.display[2] then
-        statusline = statusline .. "  Mirrored."
-      elseif sys.display[1].x1==0 and sys.display[2].x1==0 and sys.display[1].y2 == sys.display[2].y1 then
-        statusline = statusline .. "  Stacked (T->B)"
-      elseif sys.display[1].y1==0 and sys.display[2].y1==0 and sys.display[1].x2 == sys.display[2].x1 then
-        statusline = statusline .. "  SideBySide (L->R)"
-    end
+     end
+    -- else
+    --   local statusformat2  = "Screen 2 d[1].x1=%d, d[1].x2=%d, d[1].y1=%d, d[1].y2=%d."
+    --   local statusline2 = string.format(statusformat2,
+    --     sys.displays[2].x1,
+    --     sys.displays[2].x2,
+    --     sys.displays[2].y1,
+    --     sys.displays[2].y2)
+    --   statusline = statusline .. statusline2
+    --   if sys.display[1] == sys.display[2] then
+    --     statusline = statusline .. "  Mirrored."
+    --   elseif sys.display[1].x1==0 and sys.display[2].x1==0 and sys.display[1].y2 == sys.display[2].y1 then
+    --     statusline = statusline .. "  Stacked (T->B)"
+    --   elseif sys.display[1].y1==0 and sys.display[2].y1==0 and sys.display[1].x2 == sys.display[2].x1 then
+    --     statusline = statusline .. "  SideBySide (L->R)"
+    -- end
     font:write(0, 0, statusline, font_size*1.0, 0, 255, 255, 1.0)
 
     local y = 50
