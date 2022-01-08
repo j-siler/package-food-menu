@@ -63,7 +63,7 @@ local statusline = string.format(
       statusline = statusline .. statusline2
       if sys.display[1] == sys.display[2] then
         statusline = statusline .. "  Mirrored."
-      elseif sys.display[1].x1==0 && sys.display[2].x1==0 && sys.display[1].y2 == sys.display[2].y1 then
+      elseif (sys.display[1].x1==0 && sys.display[2].x1==0 && sys.display[1].y2 == sys.display[2].y1) then
         statusline = statusline .. "  Stacked (T->B)"
       elseif sys.display[1].y1==0 && sys.display[2].y1==0 && sys.display[1].x2 == sys.display[2].x1 then
         statusline = statusline .. "  SideBySide (L->R)"
