@@ -47,7 +47,8 @@ function node.render()
       sys.displays[1].x2,
       sys.displays[1].y1,
       sys.displays[1].y2)
-   font:write(0, 0, statusline, font_size*1.0, 0, 255, 255, 1.0)
+--   font:write(0, 0, statusline, font_size*1.0, 0, 255, 255, 1.0)
+   font:write(0, 0, "0123456789ABCDEFGHIJ0123456789", font_size*1.0, 0, 255, 255, 1.0)
 
    if sys.displays[2] ~= nil then
       statusformat  = "\t\t\tHDMI-1: x1=%d x2=%d y1=%d y2=%d"
