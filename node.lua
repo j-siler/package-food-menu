@@ -56,6 +56,7 @@ function node.render()
 				 sys.displays[2].x2,
 				 sys.displays[2].y1,
 				 sys.displays[2].y2)
+   font:write(0, 20, statusline, font_size*1.0, 0, 255, 255, 1.0)
       -- if sys.displays[1].x1 == sys.displays[2].x1
       -- 	 and
       -- 	 sys.displays[1].x2 == sys.displays[2].x2
