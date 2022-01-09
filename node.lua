@@ -47,7 +47,7 @@ function node.render()
       sys.displays[1].x2,
       sys.displays[1].y1,
       sys.displays[1].y2)
-   stsusline="12345"
+   statusline="12345"
    font:write(0, 0, statusline, font_size*1.0, 0, 255, 255, 1.0)
 
    if sys.displays[2] ~= nil then
