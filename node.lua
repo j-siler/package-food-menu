@@ -38,7 +38,7 @@ util.json_watch("config.json", function(config)
 end)
 
 function node.render()
-   file = io.open ("/tmp/temp.out", "rw")
+   --  file = io.open ("/tmp/temp.out", "rw")
    -- io.output("/tmp/package.out")
    -- io.write("Testing")
    background.draw(0, 0, WIDTH, HEIGHT, 1.0)
