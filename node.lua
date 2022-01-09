@@ -39,7 +39,7 @@ end)
 
 function node.render()
    -- io.output("/tmp/package.out")
-   -- io.write("Testing")
+   io.write("Testing")
    background.draw(0, 0, WIDTH, HEIGHT, 1.0)
    local statusformat  = "HDMI-0: x1=%d x2=%d y1=%d y2=%d"
    local statusline = string.format(
