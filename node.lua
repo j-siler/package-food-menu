@@ -41,12 +41,13 @@ function node.render()
    background.draw(0, 0, WIDTH, HEIGHT, 1.0)
    local statusformat  = "W=%d H=%d    HDMI-0: x1=%d x2=%d y1=%d y2=%d"
    local statusline = string.format(
-      1000, --WIDTH,
-      2000, --HEIGHT,
-      3000, --sys.displays[1].x1,
-      4000, --sys.displays[1].x2,
-      5000, --sys.displays[1].y1,
-      6000) --sys.displays[1].y2)
+      WIDTH,
+      HEIGHT,
+      sys.displays[1].x1,
+      sys.displays[1].x2,
+      sys.displays[1].y1,
+      sys.displays[1].y2)
+   statusline="12345"
    font:write(0, 0, statusline, font_size*1.0, 0, 255, 255, 1.0)
 
    if sys.displays[2] ~= nil then
