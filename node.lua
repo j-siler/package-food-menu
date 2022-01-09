@@ -39,46 +39,38 @@ end)
 
 function node.render()
    background.draw(0, 0, WIDTH, HEIGHT, 1.0)
-   local statusformat  = "H=%d W=%d %d screen.  Screen 1 x1=%d x2=%d y1=%d y2=%d.  "
-   if #sys.displays > 1 then
-      statusformat  = "H=%d W=%d %d screens.  Screen 1 x1=%d x2=%d y1=%d y2=%d.  "
-   end
+   local statusformat  = "W=%d H=%d\tHDMI-0: x1=%d x2=%d y1=%d y2=%d"
    local statusline = string.format(
-      statusformat,
-      HEIGHT,
       WIDTH,
-      #sys.displays,
+      HEIGHT,
       sys.displays[1].x1,
       sys.displays[1].x2,
       sys.displays[1].y1,
       sys.displays[1].y2)
-
-   if sys.displays[2] == nil then
-      statusline = statusline .. "No secondary screen."
-   else
-      local statusformat2  = "Screen 2 d[1].x1=%d, d[1].x2=%d, d[1].y1=%d, d[1].y2=%d."
-      local statusline2 = string.format(statusformat2,
-					sys.displays[2].x1,
-					sys.displays[2].x2,
-					sys.displays[2].y1,
-					sys.displays[2].y2)
-      statusline = statusline .. statusline2
-      if sys.displays[1].x1 == sys.displays[2].x1
-	 and
-	 sys.displays[1].x2 == sys.displays[2].x2
-	 and
-	 sys.displays[1].y1 == sys.displays[2].y1
-	 and
-	 sys.displays[1].y2 == sys.displays[2].y2
-      then
-	 statusline = statusline .. "  Mirrored."
-      -- elseif sys.displays[1].x1==0 and sys.displays[2].x1==0 and sys.displays[1].y2 == sys.displays[2].y1 then
-      -- 	 statusline = statusline .. "  Stacked (T->B)"
-      -- elseif sys.displays[1].y1==0 and sys.displays[2].y1==0 and sys.displays[1].x2 == sys.displays[2].x1 then
-      -- 	 statusline = statusline .. "  SideBySide (L->R)"
-      end
-   end
    font:write(0, 0, statusline, font_size*1.0, 0, 255, 255, 1.0)
+
+   if sys.displays[2] != nil then
+      statusformat  = "\t\t\tHDMI-1: x1=%d x2=%d y1=%d y2=%d"
+      statusline = string.format(statusformat,
+				 sys.displays[2].x1,
+				 sys.displays[2].x2,
+				 sys.displays[2].y1,
+				 sys.displays[2].y2)
+      -- if sys.displays[1].x1 == sys.displays[2].x1
+      -- 	 and
+      -- 	 sys.displays[1].x2 == sys.displays[2].x2
+      -- 	 and
+      -- 	 sys.displays[1].y1 == sys.displays[2].y1
+      -- 	 and
+      -- 	 sys.displays[1].y2 == sys.displays[2].y2
+      -- then
+      -- 	 statusline = statusline .. "  Mirrored."
+      -- -- elseif sys.displays[1].x1==0 and sys.displays[2].x1==0 and sys.displays[1].y2 == sys.displays[2].y1 then
+      -- -- 	 statusline = statusline .. "  Stacked (T->B)"
+      -- -- elseif sys.displays[1].y1==0 and sys.displays[2].y1==0 and sys.displays[1].x2 == sys.displays[2].x1 then
+      -- -- 	 statusline = statusline .. "  SideBySide (L->R)"
+      -- end
+   end
 
    local y = 50
    for idx, item in ipairs(items) do
