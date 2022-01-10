@@ -5,7 +5,7 @@ local dots = resource.load_image "dots.png"
 local separator = resource.load_image "rainbowchalkline.png"
 local range_x1, range_x2
 
-local debugfont = resource.load_font("Lato-SemiboldItalic.ttf");
+local debugfont = resource.load_font("CherryMonospace-Light.ttf");
 
 local function Resource()
    local res, nxt
