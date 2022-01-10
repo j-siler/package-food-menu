@@ -53,7 +53,7 @@ function node.render()
    font:write(75, 0, statusline, font_size*1.0, 0, 255, 255, 1.0)
 
    -- Draw status line 2, if dual display
-   if sys.displays[2] ~= nil then
+   if d2 ~= nil then
       statusformat  = "HDMI-1: x1=%d x2=%d y1=%d y2=%d"
       statusline = string.format(
 	 statusformat,
@@ -62,6 +62,14 @@ function node.render()
 	 d2.y1,
 	 d2.y2)
       font:write(75, 20, statusline, font_size*1.0, 0, 255, 255, 1.0)
+
+      -- Determine and display
+      local mirror=d1.x1==d2.x1 and d1.x2==d2.x2 and d1.y1==d2.y1 and d1.y2==d2.y2
+      local left_right=2
+      local top_bottom=3
+      local right_left=4
+      local bottom_top=5
+      local other=6
    end
 --       statusformat  = "HDMI-1: x1=%d x2=%d y1=%d y2=%d"
 --       statusline = string.format(statusformat,
