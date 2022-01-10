@@ -38,14 +38,16 @@ util.json_watch("config.json", function(config)
 end)
 
 function node.render()
+   d1 = sys.displays[1]
+   d2 = sys.displays[2]
    background.draw(0, 0, WIDTH, HEIGHT, 1.0)
    local statusformat  = "HDMI-0: x1=%d x2=%d y1=%d y2=%d"
    local statusline = string.format(
       statusformat,
-      sys.displays[1].x1,
-      sys.displays[1].x2,
-      sys.displays[1].y1,
-      sys.displays[1].y2)
+      d1.x1 --sys.displays[1].x1,
+      d1.x2 --sys.displays[1].x2,
+      d1.y1 --sys.displays[1].y1,
+      d1.y2 --sys.displays[1].y2)
    font:write(0, 0, statusline, font_size*1.0, 0, 255, 255, 1.0)
    if sys.displays[2] ~= nil then
       statusformat  = "HDMI-1: x1=%d x2=%d y1=%d y2=%d"
