@@ -75,7 +75,7 @@ function node.render()
       --          0 1920    0 1080
       -- Determine and display
       local mir = d1.x1==0 and d1.x2>d1.x1 and d2.x1==0     and d2.x2==d1.x2    and d1.y1==0     and d1.y2>d1.y1 and d2.y1==0     and d2.y2==d1.y2
-      local l2r = d1.x1==0 and d1.x2>d1.x1 and d2.x1==d1.x2 and d2.x2==d2.x2*2  and d1.y1==0     and d1.y2>d1.y1 and d2.y1==0     and d2.y2==d1.y2
+      local l2r = d1.x1==0 and d1.x2>d1.x1 and d2.x1==d1.x2 and d2.x2==d2.x1*2  and d1.y1==0     and d1.y2>d1.y1 and d2.y1==0     and d2.y2==d1.y2
       local t2b = d1.x1==0 and d1.x2>d1.x1 and d2.x1==0     and d2.x2==d1.x2    and d1.y1==0     and d1.y2>d1.y1 and d2.y1==d1.y2 and d2.y2==d2.y1*2
       local right_left=4
       local bottom_top=5
