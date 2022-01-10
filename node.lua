@@ -126,7 +126,7 @@ function node.render()
 
 	 local w = x_end - x_start
 	 w = w - (w % 20)
-	 dots:draw(x_start, y+font_size-25, x_end, y+font_size-10, 0.8, 0, 0, 1/1920*w, 1)
+	 dots:draw(x_start, y+(font_size*.33333), x_end, y+(font_size*.66667), 0.8, 0, 0, 1/1920*w, 1)
 	 y = y + font_size*1.05
       end
    end
