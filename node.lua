@@ -5,6 +5,8 @@ local dots = resource.load_image "dots.png"
 local separator = resource.load_image "rainbowchalkline.png"
 local range_x1, range_x2
 
+local debugfont = resource.load_font("Lato-SemiboldItalic.ttf");
+
 local function Resource()
    local res, nxt
    local function set(asset)
@@ -50,7 +52,7 @@ function node.render()
       d1.x2,
       d1.y1,
       d1.y2)
-   font:write(75, 0, statusline, font_size*1.0, 0, 255, 255, 1.0)
+   debugfont:write(75, 0, statusline, font_size*1.0, 0, 255, 255, 1.0)
 
    -- Draw status line 2, if dual display
    if d2 ~= nil then
