@@ -50,7 +50,7 @@ function node.render()
       d1.x2,
       d1.y1,
       d1.y2)
-   font:write(50, 0, statusline, font_size*1.0, 0, 255, 255, 1.0)
+   font:write(75, 0, statusline, font_size*1.0, 0, 255, 255, 1.0)
 
    -- Draw status line 2, if dual display
    if sys.displays[2] ~= nil then
@@ -61,7 +61,7 @@ function node.render()
 	 d2.x2,
 	 d2.y1,
 	 d2.y2)
-      font:write(50, 20, statusline, font_size*1.0, 0, 255, 255, 1.0)
+      font:write(75, 20, statusline, font_size*1.0, 0, 255, 255, 1.0)
    end
 --       statusformat  = "HDMI-1: x1=%d x2=%d y1=%d y2=%d"
 --       statusline = string.format(statusformat,
