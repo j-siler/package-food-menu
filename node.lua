@@ -41,6 +41,7 @@ function node.render()
    background.draw(0, 0, WIDTH, HEIGHT, 1.0)
    local statusformat  = "HDMI-0: x1=%d x2=%d y1=%d y2=%d"
    local statusline = string.format(
+      statusformat,
       sys.displays[1].x1,
       sys.displays[1].x2,
       sys.displays[1].y1,
