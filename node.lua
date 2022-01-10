@@ -46,9 +46,17 @@ function node.render()
       sys.displays[1].x2,
       sys.displays[1].y1,
       sys.displays[1].y2)
-   font:write(0, 0, statusline, font_size*1.0, 0, 255, 255, 1.0)
+   font:write(0, 20, statusline, font_size*1.0, 0, 255, 255, 1.0)
 
---    if sys.displays[2] ~= nil then
+   statusformat  = "HDMI-1: x1=%d x2=%d y1=%d y2=%d"
+   if sys.displays[2] ~= nil then
+      statusline = string.format(
+	 statusformat,
+	 sys.displays[2].x1,
+	 sys.displays[2].x2,
+	 sys.displays[2].y1,
+	 sys.displays[2].y2)
+      font:write(0, 0, statusline, font_size*1.0, 0, 255, 255, 1.0)
 --       statusformat  = "HDMI-1: x1=%d x2=%d y1=%d y2=%d"
 --       statusline = string.format(statusformat,
 -- 				 sys.displays[2].x1,
