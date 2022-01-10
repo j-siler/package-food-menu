@@ -90,10 +90,13 @@ function node.render()
 	 font:write(0, 0, "[1]", font_size*1.0, 255, 255, 255, 1.0)
 	 font:write(0, 20, "[2]", font_size*1.0, 255, 255, 255, 1.0)
       elseif r2l then
-	 font:write(0, 0, "[2][1]", font_size*1.0, 255, 0, 0, 1.0)
+	 font:write(0, 0, "[2][1]", font_size*1.0, 255, 100, 0, 1.0)
       elseif b2t then --d1.x1==0 and d1.x2>d1.x1  and d2.x1==0 and d2.x2==d1.x2 and d1.y1==0 and d1.y2>d1.y1 and d2.y1==d1.y2 and d2.y2>d2.y1 then
-	 font:write(0, 0, "[2]", font_size*1.0, 255, 0, 0, 1.0)
-	 font:write(0, 20, "[1]", font_size*1.0, 255, 0, 0, 1.0)
+	 font:write(0, 0, "[2]", font_size*1.0, 255, 100, 0, 1.0)
+	 font:write(0, 20, "[1]", font_size*1.0, 255, 100, 0, 1.0)
+      else
+	 font:write(0, 0, "[?]   ", font_size*1.0, 255, 0, 0, 1.0)
+	 font:write(0, 20, "   [?]", font_size*1.0, 255, 0, 0, 1.0)	 
       end
       
    end
