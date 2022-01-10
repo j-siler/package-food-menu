@@ -38,10 +38,6 @@ util.json_watch("config.json", function(config)
 end)
 
 function node.render()
-   -- require('io')
-   --  file = io.open ("/tmp/temp.out", "rw")
-   -- io.output("/tmp/package.out")
-   -- io.write("Testing")
    background.draw(0, 0, WIDTH, HEIGHT, 1.0)
    local statusformat  = "HDMI-0: x1=%d x2=%d y1=%d y2=%d"
    local statusline = string.format(
@@ -51,29 +47,29 @@ function node.render()
       sys.displays[1].y2)
    font:write(0, 0, statusline, font_size*1.0, 0, 255, 255, 1.0)
 
-   if sys.displays[2] ~= nil then
-      statusformat  = "HDMI-1: x1=%d x2=%d y1=%d y2=%d"
-      statusline = string.format(statusformat,
-				 sys.displays[2].x1,
-				 sys.displays[2].x2,
-				 sys.displays[2].y1,
-				 sys.displays[2].y2)
---   font:write(0, 20, statusline, font_size*1.0, 0, 255, 255, 1.0)
-      -- if sys.displays[1].x1 == sys.displays[2].x1
-      -- 	 and
-      -- 	 sys.displays[1].x2 == sys.displays[2].x2
-      -- 	 and
-      -- 	 sys.displays[1].y1 == sys.displays[2].y1
-      -- 	 and
-      -- 	 sys.displays[1].y2 == sys.displays[2].y2
-      -- then
-      -- 	 statusline = statusline .. "  Mirrored."
-      -- -- elseif sys.displays[1].x1==0 and sys.displays[2].x1==0 and sys.displays[1].y2 == sys.displays[2].y1 then
-      -- -- 	 statusline = statusline .. "  Stacked (T->B)"
-      -- -- elseif sys.displays[1].y1==0 and sys.displays[2].y1==0 and sys.displays[1].x2 == sys.displays[2].x1 then
-      -- -- 	 statusline = statusline .. "  SideBySide (L->R)"
-      -- end
-   end
+--    if sys.displays[2] ~= nil then
+--       statusformat  = "HDMI-1: x1=%d x2=%d y1=%d y2=%d"
+--       statusline = string.format(statusformat,
+-- 				 sys.displays[2].x1,
+-- 				 sys.displays[2].x2,
+-- 				 sys.displays[2].y1,
+-- 				 sys.displays[2].y2)
+-- --   font:write(0, 20, statusline, font_size*1.0, 0, 255, 255, 1.0)
+--       -- if sys.displays[1].x1 == sys.displays[2].x1
+--       -- 	 and
+--       -- 	 sys.displays[1].x2 == sys.displays[2].x2
+--       -- 	 and
+--       -- 	 sys.displays[1].y1 == sys.displays[2].y1
+--       -- 	 and
+--       -- 	 sys.displays[1].y2 == sys.displays[2].y2
+--       -- then
+--       -- 	 statusline = statusline .. "  Mirrored."
+--       -- -- elseif sys.displays[1].x1==0 and sys.displays[2].x1==0 and sys.displays[1].y2 == sys.displays[2].y1 then
+--       -- -- 	 statusline = statusline .. "  Stacked (T->B)"
+--       -- -- elseif sys.displays[1].y1==0 and sys.displays[2].y1==0 and sys.displays[1].x2 == sys.displays[2].x1 then
+--       -- -- 	 statusline = statusline .. "  SideBySide (L->R)"
+--       -- end
+--    end
 
    local y = 50
    for idx, item in ipairs(items) do
