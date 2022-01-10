@@ -50,7 +50,7 @@ function node.render()
       d1.x2,
       d1.y1,
       d1.y2)
-   font:write(75, 0, statusline, font_size*1.0, 0, 1.0, 1.0, 1.0)
+   font:write(75, 0, statusline, font_size*1.0, 0, 255, 255, 1.0)
 
    -- Draw status line 2, if dual display
    if d2 ~= nil then
@@ -61,7 +61,7 @@ function node.render()
 	 d2.x2,
 	 d2.y1,
 	 d2.y2)
-      font:write(75, 20, statusline, font_size*1.0, 0, 1.0, 1.0, 1.0)
+      font:write(75, 20, statusline, font_size*1.0, 0, 255, 255, 1.0)
 
       --   Mir    0 1920    0 1080
       --          0 1920    0 1080 
@@ -83,24 +83,47 @@ function node.render()
       local bottom_top=5
       local other=6
       if mir then
-	 font:write(0, 0, "[1/2]", font_size*1.0, 1.0, 1.0, 1.0, 1.0)
+	 font:write(0, 0, "[1/2]", font_size*1.0, 255, 255, 255, 1.0)
       elseif l2r then
-	 font:write(0, 0, "[1][2]", font_size*1.0, 1.0, 1.0, 1.0, 1.0)
+	 font:write(0, 0, "[1][2]", font_size*1.0, 255, 255, 255, 1.0)
       elseif t2b then --d1.x1==0 and d1.x2>d1.x1  and d2.x1==0 and d2.x2==d1.x2 and d1.y1==0 and d1.y2>d1.y1 and d2.y1==d1.y2 and d2.y2>d2.y1 then
-	 font:write(0, 0, "[1]", font_size*1.0, 1.0, 1.0, 1.0, 1.0)
-	 font:write(0, 20, "[2]", font_size*1.0, 1.0, 1.0, 1.0, 1.0)
+	 font:write(0, 0, "[1]", font_size*1.0, 255, 255, 255, 1.0)
+	 font:write(0, 20, "[2]", font_size*1.0, 255, 255, 255, 1.0)
       elseif r2l then
-	 font:write(0, 0, "[2][1]", font_size*1.0, 1.0, .5, 0, 1.0)
+	 font:write(0, 0, "[2][1]", font_size*1.0, 255, 255, 1.0)
       elseif b2t then --d1.x1==0 and d1.x2>d1.x1  and d2.x1==0 and d2.x2==d1.x2 and d1.y1==0 and d1.y2>d1.y1 and d2.y1==d1.y2 and d2.y2>d2.y1 then
-	 font:write(0, 0, "[2]", font_size*1.0, 1.0, .5, 0, 1.0)
-	 font:write(0, 20, "[1]", font_size*1.0, 1.0, .5, 0, 1.0)
+	 font:write(0, 0, "[2]", font_size*1.0, 255, 255, 0, 1.0)
+	 font:write(0, 20, "[1]", font_size*1.0, 255, 255, 0, 1.0)
       else
-	 font:write(0, 0, "[?]   ", font_size*1.0, 1.0, 0, 0, 1.0)
-	 font:write(0, 20, "   [?]", font_size*1.0, 1.0, 0, 0, 1.0)	 
+	 font:write(0, 0, "[?]   ", font_size*1.0, 255, 0, 0, 1.0)
+	 font:write(0, 20, "   [?]", font_size*1.0, 255, 0, 0, 1.0)	 
       end
+      
    end
+--       statusformat  = "HDMI-1: x1=%d x2=%d y1=%d y2=%d"
+--       statusline = string.format(statusformat,
+-- 				 sys.displays[2].x1,
+-- 				 sys.displays[2].x2,
+-- 				 sys.displays[2].y1,
+-- 				 sys.displays[2].y2)
+-- --   font:write(0, 20, statusline, font_size*1.0, 0, 255, 255, 1.0)
+--       -- if sys.displays[1].x1 == sys.displays[2].x1
+--       -- 	 and
+--       -- 	 sys.displays[1].x2 == sys.displays[2].x2
+--       -- 	 and
+--       -- 	 sys.displays[1].y1 == sys.displays[2].y1
+--       -- 	 and
+--       -- 	 sys.displays[1].y2 == sys.displays[2].y2
+--       -- then
+--       -- 	 statusline = statusline .. "  Mirrored."
+--       -- -- elseif sys.displays[1].x1==0 and sys.displays[2].x1==0 and sys.displays[1].y2 == sys.displays[2].y1 then
+--       -- -- 	 statusline = statusline .. "  Stacked (T->B)"
+--       -- -- elseif sys.displays[1].y1==0 and sys.displays[2].y1==0 and sys.displays[1].x2 == sys.displays[2].x1 then
+--       -- -- 	 statusline = statusline .. "  SideBySide (L->R)"
+--       -- end
+--    end
 
-   local y = fontsize *2.5
+   local y = 50
    for idx, item in ipairs(items) do
       if item.text == "" then
 	 local len = range_x2-range_x1
