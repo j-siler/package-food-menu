@@ -80,9 +80,9 @@ function node.render()
       local right_left=4
       local bottom_top=5
       local other=6
-      -- if t2b then
+      if  d1.x1==0 then
 	 font:write(0, 0, "T2B", font_size*1.0, 0, 255, 255, 1.0)
-      --end
+      end
       
    end
 --       statusformat  = "HDMI-1: x1=%d x2=%d y1=%d y2=%d"
