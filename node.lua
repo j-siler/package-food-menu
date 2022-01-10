@@ -80,7 +80,7 @@ function node.render()
       local right_left=4
       local bottom_top=5
       local other=6
-      if  d1.x1==0 and d1.x2>d1.x1  and d2.x1==0 and d2.x2==d1.x2 and d1.y1==0 then
+      if  d1.x1==0 and d1.x2>d1.x1  and d2.x1==0 and d2.x2==d1.x2 and d1.y1==0 and d1.y2>d2.y1 then
 	 font:write(0, 0, "T2B", font_size*1.0, 0, 255, 255, 1.0)
       end
       
